@@ -81,4 +81,16 @@ const updateTotal = () => {
     getInputValue("total-tax");
   document.getElementById("total").innerText = parseFloat(grandTotal).toFixed(2);
 };
+
+
+const clearMyCart = () => {
+
+
+  setInnerText('total-Products', 0);
+  setInnerText('price', 0);
+  setInnerText('delivery-charge', 0);
+  setInnerText('total-tax', 0);
+  setInnerText('total', 0);
+}
+
 loadProducts();
