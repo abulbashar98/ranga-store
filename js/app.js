@@ -18,6 +18,10 @@ const showProducts = (products) => {
       </div>
       <h3>${product.title}</h3>
       <p>Category: ${product.category}</p>
+      <div class="rating-area">
+      <div><h5 class="fw-bolder text-info">Rating: ${product.rating.rate}</h5></div>
+      <div><h5 class="fw-bolder text-info">Count: ${product.rating.count}</h5></div>
+      </div>
       <h2>Price: $ ${product.price}</h2>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
       <button id="details-btn" class="btn btn-danger">Details</button></div>
@@ -107,6 +111,7 @@ const searchResults = () => {
     const productsContainer = document.getElementById("all-products");
     productsContainer.textContent = '';
     for (const product of filterdProducts) {
+      console.log(product);
       const image = product.image;
       const div = document.createElement("div");
       div.classList.add("product");
@@ -116,6 +121,10 @@ const searchResults = () => {
         </div>
         <h3>${product.title}</h3>
         <p>Category: ${product.category}</p>
+        <div class="rating-area">
+      <div><h5 class="fw-bolder text-info">Rating: ${product.rating.rate}</h5></div>
+      <div><h5 class="fw-bolder text-info">Count: ${product.rating.count}</h5></div>
+      </div>
         <h2>Price: $ ${product.price}</h2>
         <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
         <button id="details-btn" class="btn btn-danger">Details</button></div>
